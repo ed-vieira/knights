@@ -3,3 +3,17 @@
 .content{
     margin-top: 7%;
   }
+
+  .red-title{
+    color: #cc0000; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    border: auto; 
+  }
+
+  .blue-title{
+    color: #000066; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    border: auto; 
+  }

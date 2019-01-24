@@ -39,7 +39,7 @@ export class KnightsService {
 
   public getHeroes(): Observable<any> {
     
-    return this.http.get(endpoint + 'knights/param/heroes')
+    return this.http.get(endpoint + 'knights/filter/heroes')
       .pipe(map(this.extractData));
     
   }
