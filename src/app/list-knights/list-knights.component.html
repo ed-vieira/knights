@@ -1,12 +1,16 @@
+
+
 <div class="row content">
   <div class="col-lg-10 offset-lg-1">
 
-    <table class="table table-hover table-striped">
+    <table id="knights" class="table table-hover table-striped">
       <thead class="thead-dark">
         <tr>
           <th>Name</th>
           <th>Nickname</th>
           <th>Birthday</th>
+          <th>Age</th>
+          <th>Exp</th>
           <th>Key Attribute</th>
           <th>Attributes</th>
           <th>Weapons</th>
@@ -18,6 +22,8 @@
           <td>{{k.name}}</td>
           <td>{{k.nickname}} </td>
           <td>{{k.birthday | date: "dd/MM/yyyy" }} </td>
+          <td>{{k.age}}</td>
+          <td>{{k.exp}}</td>
           <td>{{k.keyAttribute}} </td>
           <td>
               {{" Constitution: " + k.attributes.constitution}} 
@@ -43,3 +49,10 @@
 </div>
 
 
+<script>
+
+ $().ready( function () {
+    $('#knights').DataTable();
+  });
+
+</script>

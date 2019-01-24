@@ -24,11 +24,13 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
               "src/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/jquery.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"             
             ]
           },
           "configurations": {

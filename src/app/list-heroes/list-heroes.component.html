@@ -1,0 +1,58 @@
+
+
+<div class="row content">
+    <div class="col-lg-10 offset-lg-1">
+  
+      <table id="knights" class="table table-hover table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Nickname</th>
+            <th>Birthday</th>
+            <th>Age</th>
+            <th>Exp</th>
+            <th>Key Attribute</th>
+            <th>Attributes</th>
+            <th>Weapons</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let k of heroes;">
+  
+            <td>{{k.name}}</td>
+            <td>{{k.nickname}} </td>
+            <td>{{k.birthday | date: "dd/MM/yyyy" }} </td>
+            <td>{{k.age}}</td>
+            <td>{{k.exp}}</td>
+            <td>{{k.keyAttribute}} </td>
+            <td>
+                {{" Constitution: " + k.attributes.constitution}} 
+                {{" Dexterity: " + k.attributes.dexterity}} 
+                {{" Intelligence " + k.attributes.intelligence}} 
+                {{" Wisdom " + k.attributes.wisdom}} 
+                {{" Charisma " + k.attributes.charisma}}     
+            </td>
+            <td>
+                {{"Quant.:"}} {{k.weapons.length}}
+                {{", Name: "}} {{k.weapons[0].name}}
+                {{", Attr: "}} {{k.weapons[0].attr}}
+                {{", Mod: "}} {{k.weapons[0].mod}}
+                {{", Equipped: "}} {{k.weapons[0].equipped? 'Yes':'No'}}
+            </td>
+  
+          </tr>
+        </tbody>
+      </table>
+  
+  
+    </div>
+  </div>
+  
+  
+  <script>
+  
+   $().ready( function () {
+      $('#knights').DataTable();
+    });
+  
+  </script>
