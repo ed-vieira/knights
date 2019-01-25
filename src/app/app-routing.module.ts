@@ -10,6 +10,7 @@ import{ CreateKnightComponent } from './create-knight/create-knight.component';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/list-knights', pathMatch: 'full' },
   {path: 'list-knights', component: ListKnightsComponent},
   {path: 'list-heroes', component: ListHeroesComponent},
   {path: 'get-knight/:id', component: GetKnightComponent},
