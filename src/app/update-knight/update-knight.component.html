@@ -6,75 +6,37 @@
     <div class="col-lg-6 offset-lg-1">
   
   
-        <table class="table table-hover table-striped">
-            <thead class='thead-dark'>
-               <tr>
-                 <th colspan="2" class='text-center'>KNIGHT - {{knight.nickname | uppercase }}</th>
-               </tr>
-            </thead>
-            <tr>
-              <th>Name: </th> <td>{{knight.name | titlecase }}</td>
-            </tr>
-            <tr>
-               <th>Nickname: </th> 
-               <td>
-                  {{knight.nickname | uppercase}}
-               </td>
-            </tr>
 
-            <tr>
-                <th> New Nickname:</th> 
-                <td>         
-                  
-                    <input type="text" [(ngModel)]="knight.nickname" name="nickname" 
-                      class="form-control" placeholder="Nickname: " /> 
-               
-                </td>
-             </tr>
-           
-            <tr>
-               <th>Age: </th> <td>{{knight.age}}</td>
-            </tr>
-           
-            <tr>
-               <th>Key Attribute:</th> <td>{{knight.keyAttribute}}</td>
-            </tr>
-           
-            <tr>
-               <th> Exp</th> <td>{{knight.exp}}</td>
-            </tr>
-            <tr>
-                <th>Birthday</th> <td>{{knight.birthday | date: "dd/MM/yyyy" }} </td>
-            </tr> 
-            <tr>
-               <th>Attributes</th> 
-               <td>         
-                  {{" Constitution: " + knight.attributes.constitution}} 
-                  {{" Dexterity: " + knight.attributes.dexterity}} 
-                  {{" Intelligence " + knight.attributes.intelligence}} 
-                  {{" Wisdom " + knight.attributes.wisdom}} 
-                  {{" Charisma " + knight.attributes.charisma}}     
-              </td>
-            </tr>
-           
-            <tr>
-              <th>Weapons</th><td>{{"Quant.:"}} {{knight.weapons.length}}</td>
-            </tr> 
-            <tr *ngFor='let w of knight.weapons; let i = index; '>
-                <td>{{ i + 1}}</td> 
-                <td>         
-                    
-                    {{" Weapon Name: "}} {{w.name}}
-                    {{"| Weapon Attr: "}} {{w.attr}}
-                    {{"| Weapon Mod: "}} {{w.mod}}
-                    {{"| Equipped: "}} {{w.equipped? 'Yes':'No'}}  
-               </td>
-             </tr>
-  
-  
-           </table>
-  
-  
+           <div class="card ">
+            <div class="card-header">
+                <p class="card-title">
+                    <strong>Knight {{knight.nickname}}</strong>
+                  </p>
+            </div>
+            <div class='card-body'>        
+      
+      
+              <p>Name: {{knight.name}} </p>
+              <p>Nickname: {{knight.nickname}} </p>
+              <p>Birthday: {{knight.birthday | date: "dd/MM/yyyy" }}</p>
+              <p>Key Attribute: {{knight.keyAttribute}}</p>  
+ 
+
+              <p>New Nickname:</p> 
+              <p>
+               <input type="text" [(ngModel)]="knight.nickname" name="nickname" 
+               class="form-control" placeholder="Nickname: " /> 
+              </p>
+
+      
+            </div>
+          </div>
+
+
+
+
+
+   <div class='mt-4'>
   
     <button (click)='back()' class='btn btn-success mr-1'>
        <span class='fa fa-angle-double-left'></span> Go Back
@@ -82,9 +44,12 @@
    
   
      <button class='btn btn-success mr-1' (click)="updateNickname()" >
-        <span class='fa edit-o'></span> Update Nickname 
+        <span class='fa edit-o'></span> Update 
      </button>
-  
+
+  </div>
+
+
      </div>
   </div>
   
