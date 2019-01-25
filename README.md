@@ -7,6 +7,7 @@ $ npm install
 
 
 Inicio o servidor
+
 $ ng serve
 
 
