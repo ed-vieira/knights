@@ -5,14 +5,13 @@ import { Location } from '@angular/common';
 
 
 @Component({
-  selector: 'app-get-knight',
-  templateUrl: './get-knight.component.html',
-  styleUrls: ['./get-knight.component.css']
+  selector: 'app-get-hero',
+  templateUrl: './get-hero.component.html',
+  styleUrls: ['./get-hero.component.css']
 })
-export class GetKnightComponent implements OnInit {
+export class GetHeroComponent implements OnInit {
 
-
-  knight: any; 
+  hero: any; 
 
   constructor(private knightsService: KnightsService, 
               private route: ActivatedRoute, 
@@ -20,15 +19,15 @@ export class GetKnightComponent implements OnInit {
               private location: Location) { }
 
   ngOnInit() {
-    this.getKnight(this.route.snapshot.params['id']);
+    this.getHero(this.route.snapshot.params['id']);
   }
 
   
 
-  getKnight(id){
-    this.knightsService.getKnight(id).subscribe((data: {}) => {
+  getHero(id){
+    this.knightsService.getHero(id).subscribe((data: {}) => {
       console.log(data);
-      this.knight = data;
+      this.hero = data;
     });
   }
   
@@ -36,7 +35,5 @@ export class GetKnightComponent implements OnInit {
   back(){
     this.location.back();
   }
-
-
 
 }

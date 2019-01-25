@@ -1,0 +1,75 @@
+<div class="jumbotron text-center">
+      <h1 class="red-title">Hall of Heroes</h1>
+ </div>
+
+
+<div class="row content">
+    <div class="col-lg-6 offset-lg-1">
+  
+  
+        <table class="table table-hover table-striped">
+            <thead class='thead-dark'>
+               <tr>
+                 <th colspan="2" class='text-center text-danger'>HERO - {{hero.nickname | uppercase }}</th>
+               </tr>
+            </thead>
+            <tr>
+              <th>Name: </th> <td>{{hero.name | titlecase }}</td>
+            </tr>
+            <tr>
+               <th>Nickname: </th> <td>{{hero.nickname | uppercase}} </td>
+            </tr>
+           
+            <tr>
+               <th>Age: </th> <td>{{hero.age}}</td>
+            </tr>
+           
+            <tr>
+               <th>Key Attribute:</th> <td>{{hero.keyAttribute}}</td>
+            </tr>
+           
+            <tr>
+               <th> Exp</th> <td>{{hero.exp}}</td>
+            </tr>
+            <tr>
+                <th>Birthday</th> <td>{{hero.birthday | date: "dd/MM/yyyy" }} </td>
+            </tr> 
+            <tr>
+               <th>Attributes</th> 
+               <td>         
+                  {{" Constitution: " + hero.attributes.constitution}} 
+                  {{" Dexterity: " + hero.attributes.dexterity}} 
+                  {{" Intelligence " + hero.attributes.intelligence}} 
+                  {{" Wisdom " + hero.attributes.wisdom}} 
+                  {{" Charisma " + hero.attributes.charisma}}     
+              </td>
+            </tr>
+           
+            <tr>
+              <th>Weapons</th><td>{{"Quant.:"}} {{hero.weapons.length}}</td>
+            </tr> 
+            <tr *ngFor='let w of hero.weapons; let i = index; '>
+                <td>{{i + 1}}</td> 
+                <td>         
+                    
+                    {{" Weapon Name: "}} {{w.name}}
+                    {{"| Weapon Attr: "}} {{w.attr}}
+                    {{"| Weapon Mod: "}} {{w.mod}}
+                    {{"| Equipped: "}} {{w.equipped? 'Yes':'No'}}  
+               </td>
+             </tr>
+  
+  
+           </table>
+  
+  
+  
+    <button (click)='back()' class='btn btn-success'>
+       <span class='fa fa-angle-double-left'></span> Go Back
+    </button>
+  
+  
+     </div>
+  </div>
+  
+  

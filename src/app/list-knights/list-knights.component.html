@@ -1,3 +1,5 @@
+
+
 <div class="jumbotron text-center">
     <h1 class="blue-title">The Knights</h1>
 </div>
@@ -8,40 +10,28 @@
     <table id="knights" class="table table-hover table-striped">
       <thead class="thead-dark">
         <tr>
+          <th></th>
           <th>Name</th>
-          <th>Nickname</th>
-          <th>Birthday</th>
-          <th>Age</th>
-          <th>Exp</th>
-          <th>Key Attribute</th>
-          <th>Attributes</th>
+          <th>Age</th>       
           <th>Weapons</th>
+          <th>Key Attribute</th>
+          <th>Attack</th>
+          <th>Exp</th>
+          <th></th>
         </tr>
       </thead>
       <tbody >
-        <tr *ngFor="let k of knights;">
-
+        <tr *ngFor="let k of knights;let i = index;">
+          <td>{{i + 1}} </td>
           <td>{{k.name}}</td>
-          <td>{{k.nickname}} </td>
-          <td>{{k.birthday | date: "dd/MM/yyyy" }} </td>
           <td>{{k.age}}</td>
-          <td>{{k.exp}}</td>
+          <td>{{k.weapons.length}}</td>
           <td>{{k.keyAttribute}} </td>
+          <td>{{k.attack}} </td>
+          <td>{{k.exp}}</td>
           <td>
-              {{" Constitution: " + k.attributes.constitution}} 
-              {{" Dexterity: " + k.attributes.dexterity}} 
-              {{" Intelligence " + k.attributes.intelligence}} 
-              {{" Wisdom " + k.attributes.wisdom}} 
-              {{" Charisma " + k.attributes.charisma}}     
+            <a class="btn btn-default" routerLink="/get-knight/{{k._id}}"><span class="fa fa-search"></span></a>
           </td>
-          <td>
-              {{"Quant.:"}} {{k.weapons.length}}
-              {{", Name: "}} {{k.weapons[0].name}}
-              {{", Attr: "}} {{k.weapons[0].attr}}
-              {{", Mod: "}} {{k.weapons[0].mod}}
-              {{", Equipped: "}} {{k.weapons[0].equipped? 'Yes':'No'}}
-          </td>
-
         </tr>
       </tbody>
     </table>
@@ -51,10 +41,3 @@
 </div>
 
 
-<script>
-
- $().ready( function () {
-    $('#knights').DataTable();
-  });
-
-</script>

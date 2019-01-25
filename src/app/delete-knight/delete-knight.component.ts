@@ -3,14 +3,12 @@ import { KnightsService } from '../knights.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-
 @Component({
-  selector: 'app-get-knight',
-  templateUrl: './get-knight.component.html',
-  styleUrls: ['./get-knight.component.css']
+  selector: 'app-delete-knight',
+  templateUrl: './delete-knight.component.html',
+  styleUrls: ['./delete-knight.component.css']
 })
-export class GetKnightComponent implements OnInit {
-
+export class DeleteKnightComponent implements OnInit {
 
   knight: any; 
 
@@ -20,22 +18,19 @@ export class GetKnightComponent implements OnInit {
               private location: Location) { }
 
   ngOnInit() {
-    this.getKnight(this.route.snapshot.params['id']);
+    this.deleteKnight(this.route.snapshot.params['id']);
   }
 
   
 
-  getKnight(id){
-    this.knightsService.getKnight(id).subscribe((data: {}) => {
+  deleteKnight(id){
+    this.knightsService.deleteKnight(id).subscribe((data: {}) => {
+      this.router.navigate(['/list-heroes/']);
       console.log(data);
       this.knight = data;
     });
   }
   
-
-  back(){
-    this.location.back();
-  }
 
 
 

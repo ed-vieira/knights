@@ -18,13 +18,19 @@
             <tr>
                <th>Nickname: </th> 
                <td>
-                 {{knight.nickname | uppercase}}
-                 <form> 
-                   <input type="text" [(ngModel)]="knight.nickname" name="nickname" 
-                     class="form-control" placeholder="Nickname: " /> 
-                    </form> 
+                  {{knight.nickname | uppercase}}
                </td>
             </tr>
+
+            <tr>
+                <th> New Nickname:</th> 
+                <td>         
+                  
+                    <input type="text" [(ngModel)]="knight.nickname" name="nickname" 
+                      class="form-control" placeholder="Nickname: " /> 
+               
+                </td>
+             </tr>
            
             <tr>
                <th>Age: </th> <td>{{knight.age}}</td>
@@ -75,8 +81,8 @@
     </button>
    
   
-     <button class='btn btn-success mr-1'>
-      <a routerLink="/delete-hero/{{knight._id}}" class='white-link'>  <span class='fa edit-o'></span> Update Nickname </a>
+     <button class='btn btn-success mr-1' (click)="updateNickname()" >
+        <span class='fa edit-o'></span> Update Nickname 
      </button>
   
      </div>

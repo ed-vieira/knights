@@ -11,6 +11,10 @@ import { ListHeroesComponent } from './list-heroes/list-heroes.component';
 import { GetKnightComponent } from './get-knight/get-knight.component';
 import { CreateKnightComponent } from './create-knight/create-knight.component';
 import { UpdateKnightComponent } from './update-knight/update-knight.component';
+import { GetHeroComponent } from './get-hero/get-hero.component';
+import { DeleteKnightComponent } from './delete-knight/delete-knight.component';
+
+
 
 
 @NgModule({
@@ -21,12 +25,15 @@ import { UpdateKnightComponent } from './update-knight/update-knight.component';
     GetKnightComponent,
     CreateKnightComponent,
     UpdateKnightComponent,
+    GetHeroComponent,
+    DeleteKnightComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+ //   DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

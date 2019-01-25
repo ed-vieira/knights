@@ -13,7 +13,7 @@ export class ListKnightsComponent implements OnInit {
   public knights:any = [];
  
 
-  constructor(public knightsService: KnightsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private knightsService: KnightsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
      this.getKnights();
