@@ -1,218 +1,223 @@
-<div class="row content">
-  <div class="col-lg-6 offset-lg-1">
-
-    <form>
-
-      <div class="form-group">
-        <label for='_name'>Name:</label>
-        <input type="text" id='_name' [(ngModel)]="knight.name" name="name" 
-          class="form-control" placeholder="Name: " required />
-      </div>
-
-      <div class="form-group">
-        <label for='_nickname'>Nickname:</label>
-        <input type="text" id='_nickname' [(ngModel)]="knight.nickname" name="nickname" class="form-control"
-          placeholder="Nickname: " />
-      </div>
-      
-      
-      <div class="form-group">
-        <label for='_birthday'>Birthday:</label>
-        <input type="date" id='_birthday' [(ngModel)]="knight.birthday" name="birthday" class="form-control" />
-      </div>
+<div class="container">
 
 
+  <div class="row content">
+    <div class="col-lg-6 offset-lg-1">
 
-      <div class="row">
-        <div class="col-lg-8 offset-lg-1">
-          <h3>Attributes</h3>
-        </div>
-      </div>
+      <form>
 
-      <div class="row">
-
-        <div class="col-lg-6">
-
-          <div class="form-group col-lg-10">
-            <label for='_strenght'>Strenght:</label>
-            <input type="number"  min="0"  id='_stranght' [(ngModel)]="knight.attributes.strenght" name="strenght" class="form-control"
-              placeholder="Strenght: " />
-          </div>
-
-          <div class="form-group col-lg-10">
-            <label for='_dexterity'>Dexterity:</label>
-            <input type="number"  min="0"  id='_dexterity' [(ngModel)]="knight.attributes.dexterity" name="dexterity" class="form-control"
-              placeholder="Dexterity: " />
-          </div>
-
-          <div class="form-group col-lg-10">
-            <label for='_constitution'>Constitution:</label>
-            <input type="number"  min="0"  id='_constitution' [(ngModel)]="knight.attributes.constitution" name="constitution" class="form-control"
-              placeholder="Constitution: " />
-          </div>
-
+        <div class="form-group">
+          <label for='_name'>Name:</label>
+          <input type="text" id='_name' [(ngModel)]="knight.name" name="name" class="form-control" placeholder="Name: "
+            required />
         </div>
 
-        <div class="col-lg-6">
+        <div class="form-group">
+          <label for='_nickname'>Nickname:</label>
+          <input type="text" id='_nickname' [(ngModel)]="knight.nickname" name="nickname" class="form-control"
+            placeholder="Nickname: " />
+        </div>
 
-          <div class="form-group col-lg-10">
-            <label for='_intelligence'>Intelligence:</label>
-            <input type="number"  min="0"  id='_intelligence' [(ngModel)]="knight.attributes.intelligence" name="intelligence"
-              class="form-control" placeholder="Intelligence: " />
-          </div>
 
-          <div class="form-group col-lg-10">
-            <label for='_wisdom'>Wisdom:</label>
-            <input type="number"  min="0"  id='_wisdom' [(ngModel)]="knight.attributes.wisdom" name="wisdom" class="form-control"
-              placeholder="Wisdom: " />
-          </div>
-
-          <div class="form-group col-lg-10">
-            <label for='_charisma'>Charisma:</label>
-            <input type="number"  min="0"  id='_charisma' [(ngModel)]="knight.attributes.charisma" name="charisma" class="form-control"
-              placeholder="Charisma: " />
-          </div>
-
+        <div class="form-group">
+          <label for='_birthday'>Birthday:</label>
+          <input type="date" id='_birthday' [(ngModel)]="knight.birthday" name="birthday" class="form-control" />
         </div>
 
 
 
-      </div>
+        <div class="row">
+          <div class="col-lg-8 offset-lg-1">
+            <h3>Attributes</h3>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+
+            <div class="form-group col-lg-10">
+              <label for='_strenght'>Strenght:</label>
+              <input type="number" min="0" id='_stranght' [(ngModel)]="knight.attributes.strenght" name="strenght"
+                class="form-control" placeholder="Strenght: " />
+            </div>
+
+            <div class="form-group col-lg-10">
+              <label for='_dexterity'>Dexterity:</label>
+              <input type="number" min="0" id='_dexterity' [(ngModel)]="knight.attributes.dexterity" name="dexterity"
+                class="form-control" placeholder="Dexterity: " />
+            </div>
+
+            <div class="form-group col-lg-10">
+              <label for='_constitution'>Constitution:</label>
+              <input type="number" min="0" id='_constitution' [(ngModel)]="knight.attributes.constitution" name="constitution"
+                class="form-control" placeholder="Constitution: " />
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="form-group col-lg-10">
+              <label for='_intelligence'>Intelligence:</label>
+              <input type="number" min="0" id='_intelligence' [(ngModel)]="knight.attributes.intelligence" name="intelligence"
+                class="form-control" placeholder="Intelligence: " />
+            </div>
+
+            <div class="form-group col-lg-10">
+              <label for='_wisdom'>Wisdom:</label>
+              <input type="number" min="0" id='_wisdom' [(ngModel)]="knight.attributes.wisdom" name="wisdom" class="form-control"
+                placeholder="Wisdom: " />
+            </div>
+
+            <div class="form-group col-lg-10">
+              <label for='_charisma'>Charisma:</label>
+              <input type="number" min="0" id='_charisma' [(ngModel)]="knight.attributes.charisma" name="charisma"
+                class="form-control" placeholder="Charisma: " />
+            </div>
+
+          </div>
+
+
+
+        </div>
 
 
 
 
-      <div class="form-group">
-        <label for="key">Key Attribute</label>
-        <select [(ngModel)]="knight.keyAttribute" name="keyAttribute" class="form-control" id="key">
-          <optgroup label='Key Attribute'>
-            <option *ngFor='let attr of knightAttr' value="{{attr.key}}">
-              {{attr.key | titlecase}}
-            </option>
-          </optgroup>
-        </select>
-      </div>
+        <div class="form-group">
+          <label for="key">Key Attribute</label>
+          <select [(ngModel)]="knight.keyAttribute" name="keyAttribute" class="form-control" id="key">
+            <optgroup label='Key Attribute'>
+              <option *ngFor='let attr of knightAttr' value="{{attr.key}}">
+                {{attr.key | titlecase}}
+              </option>
+            </optgroup>
+          </select>
+        </div>
 
-      <div class="form-group">
-        <label for='_weapon_name'>Weapon Name:</label>
-        <input type="text" id='_weapon_name' [(ngModel)]="knight.weapons[0].name" name="weapon_name" class="form-control"
-          placeholder="Name: " />
-      </div>
+        <div class="form-group">
+          <label for='_weapon_name'>Weapon Name:</label>
+          <input type="text" id='_weapon_name' [(ngModel)]="knight.weapons[0].name" name="weapon_name" class="form-control"
+            placeholder="Name: " />
+        </div>
 
-      <div class="form-group">
-        <label for='weapon_mod'>Weapon Mod:</label>
-        <input type="number" min="0" id='weapon_mod' [(ngModel)]="knight.weapons[0].mod" name="weapon_mod" class="form-control"
-          placeholder="Weapon Mod: " />
-      </div>
+        <div class="form-group">
+          <label for='weapon_mod'>Weapon Mod:</label>
+          <input type="number" min="0" id='weapon_mod' [(ngModel)]="knight.weapons[0].mod" name="weapon_mod" class="form-control"
+            placeholder="Weapon Mod: " />
+        </div>
 
-      <div class="form-group">
-        <label for='_weapon_attr'>Weapon Attr:</label>
-        <input type="text" id='_weapon_attr' [(ngModel)]="knight.weapons[0].attr" name="weapon_attr" class="form-control"
-          placeholder="Weapon Attr: " />
-      </div>
+        <div class="form-group">
+          <label for='_weapon_attr'>Weapon Attr:</label>
+          <input type="text" id='_weapon_attr' [(ngModel)]="knight.weapons[0].attr" name="weapon_attr" class="form-control"
+            placeholder="Weapon Attr: " />
+        </div>
 
-      <div class="form-group">
-        <label for="_equipped">Equipped</label>
-        <select [(ngModel)]="knight.weapons[0].equipped" class="form-control" name='equipped' id="_equipped">
-          <option value="false">No</option>
-          <option value="true">Yes</option>
-        </select>
-      </div>
-
-
-      <div class="form-group">
-        <button class="btn btn-success mr-1"  (click)="createKnight()">
-          Enviar
-        </button>
-
-        <button type="reset" class="btn btn-danger">
-          Refazer
-        </button>
-
-      </div>
+        <div class="form-group">
+          <label for="_equipped">Equipped</label>
+          <select [(ngModel)]="knight.weapons[0].equipped" class="form-control" name='equipped' id="_equipped">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+          </select>
+        </div>
 
 
+        <div class="form-group">
+          <button class="btn btn-success mr-1" (click)="createKnight()">
+            Enviar
+          </button>
 
-    </form>
+          <button type="reset" class="btn btn-danger">
+            Refazer
+          </button>
 
+        </div>
+
+
+
+      </form>
+
+    </div>
   </div>
-</div>
 
 
-<div class="row">
+  <div class="row content">
 
-  <div class="col-lg-3">
-    <div class="card ">
-      <div class="card-header">
+    <div class="col-lg-3 offset-lg-1">
+      <div class="card ">
+        <div class="card-header">
           <p class="card-title">
-              <strong>Knight</strong>
-            </p>
-      </div>
-      <div class='card-body'>        
-
-
-        <p>Name: {{knight.name}} </p>
-        <p>Nickname: {{knight.nickname}} </p>
-        <p>Birthday: {{knight.birthday}}</p>
-        <p>Key Attribute: {{knight.keyAttribute}}</p>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="col-lg-3">
-    <div class="card ">
-        <div class="card-header">
-            <p class="card-title">
-                <strong>Attributes</strong>
-              </p>
+            <strong>Knight</strong>
+          </p>
         </div>
-      <div class='card-body'>
-        <p>
-          Strenght: {{knight.attributes.strenght}}
-        </p>
-        <p>
-          Dexterity: {{knight.attributes.dexterity}}
-        </p>
-        <p>
-          Constitution: {{knight.attributes.constitution}}
-        </p>
-        <p>
-          Charisma: {{knight.attributes.charisma}}
-        </p>
-        <p>
-          Wisdom: {{knight.attributes.wisdom}}
-        </p>
-        <p>
-          Intelligence: {{knight.attributes.intelligence}}
-        </p>
-      </div>
-    </div>
-  </div>
+        <div class='card-body'>
 
-  <div class="col-lg-3">
-    <div class="card ">
-        <div class="card-header">
-            <p class="card-title">
-                <strong>Weapon</strong>
-            </p>
+
+          <p>Name: {{knight.name}} </p>
+          <p>Nickname: {{knight.nickname}} </p>
+          <p>Birthday: {{knight.birthday}}</p>
+          <p>Key Attribute: {{knight.keyAttribute}}</p>
+
         </div>
-      <div class='card-body'>
-
-        <p>
-          Weapon Name: {{knight.weapons[0].name}}
-        </p>
-        <p>
-          Weapon Attr: {{knight.weapons[0].attr}}
-        </p>
-        <p>
-          Weapon Mod: {{knight.weapons[0].mod}}
-        </p>
-        <p>
-          Equipped: {{knight.weapons[0].equipped}}
-        </p>
       </div>
     </div>
+
+    <div class="col-lg-3">
+      <div class="card ">
+        <div class="card-header">
+          <p class="card-title">
+            <strong>Attributes</strong>
+          </p>
+        </div>
+        <div class='card-body'>
+          <p>
+            Strenght: {{knight.attributes.strenght}}
+          </p>
+          <p>
+            Dexterity: {{knight.attributes.dexterity}}
+          </p>
+          <p>
+            Constitution: {{knight.attributes.constitution}}
+          </p>
+          <p>
+            Charisma: {{knight.attributes.charisma}}
+          </p>
+          <p>
+            Wisdom: {{knight.attributes.wisdom}}
+          </p>
+          <p>
+            Intelligence: {{knight.attributes.intelligence}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <div class="card ">
+        <div class="card-header">
+          <p class="card-title">
+            <strong>Weapon</strong>
+          </p>
+        </div>
+        <div class='card-body'>
+
+          <p>
+            Weapon Name: {{knight.weapons[0].name}}
+          </p>
+          <p>
+            Weapon Attr: {{knight.weapons[0].attr}}
+          </p>
+          <p>
+            Weapon Mod: {{knight.weapons[0].mod}}
+          </p>
+          <p>
+            Equipped: {{knight.weapons[0].equipped}}
+          </p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
